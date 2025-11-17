@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BarGo – Выездной бар под ключ</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Блок 1: Главный экран (Hero) -->
+  <section class="hero" id="home">
+    <div class="overlay"></div>
+    <div class="container">
+      <header>
+        <img src="logo.svg" alt="BarGo" class="logo"/>
+      </header>
+      <div class="hero-content">
+        <h1>Выездной бар для любых событий</h1>
+        <p>Коктейли, бармены, оборудование — всё под ключ</p>
+        <a href="#form" class="btn">Заказать бар</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 2: Услуги -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      <div class="services-grid">
+        <div class="service-item">
+          <img src="icons/bar.svg" alt="Выездной бар" />
+          <h3>Выездной бар под ключ</h3>
+          <p>Организуем бар с нуля — от оборудования до напитков.</p>
+        </div>
+        <div class="service-item">
+          <img src="icons/bartender.svg" alt="Бармены" />
+          <h3>Профессиональные бармены</h3>
+          <p>Опытные бармены с сертификатами и навыками шоу.</p>
+        </div>
+        <div class="service-item">
+          <img src="icons/menu.svg" alt="Меню" />
+          <h3>Коктейльная карта</h3>
+          <p>Классика, авторские напитки, безалкогольные варианты.</p>
+        </div>
+        <div class="service-item">
+          <img src="icons/decor.svg" alt="Оформление" />
+          <h3>Оформление и оборудование</h3>
+          <p>Барная стойка, свет, посуда, лёд — всё включено.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 3: Галерея -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2>Примеры наших работ</h2>
+      <div class="gallery-grid">
+        <img src="gallery/1.jpg" alt="Работа 1"/>
+        <img src="gallery/2.jpg" alt="Работа 2"/>
+        <img src="gallery/3.jpg" alt="Работа 3"/>
+        <img src="gallery/4.jpg" alt="Работа 4"/>
+        <img src="gallery/5.jpg" alt="Работа 5"/>
+        <img src="gallery/6.jpg" alt="Работа 6"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 4: Мини-меню -->
+  <section class="menu" id="menu">
+    <div class="container">
+      <h2>Популярные коктейли</h2>
+      <div class="menu-grid">
+        <div class="drink">
+          <h3>Мохито</h3>
+          <p>Свежий ром, мята, лайм, сода</p>
+          <span class="price">650 ₽</span>
+        </div>
+        <div class="drink">
+          <h3>Апероль Шпритц</h3>
+          <p>Апероль, просекко, сода</p>
+          <span class="price">750 ₽</span>
+        </div>
+        <div class="drink">
+          <h3>Космополитан</h3>
+          <p>Водка, клюква, лимон, Cointreau</p>
+          <span class="price">700 ₽</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 5: Калькулятор -->
+  <section class="calculator" id="calc">
+    <div class="container">
+      <h2>Рассчитайте стоимость</h2>
+      <div class="calc-form">
+        <label>Тип события</label>
+        <select id="event-type">
+          <option value="wedding">Свадьба</option>
+          <option value="corporate">Корпоратив</option>
+          <option value="birthday">День рождения</option>
+          <option value="private">Частная вечеринка</option>
+        </select>
+
+        <label>Количество гостей</label>
+        <input type="number" id="guests" min="10" value="50" />
+
+        <label>Время работы (часы)</label>
+        <input type="number" id="hours" min="2" max="12" value="4" />
+
+        <label>Тип пакета</label>
+        <select id="package">
+          <option value="classic">Классика (150 ₽/гость)</option>
+          <option value="premium">Премиум (300 ₽/гость)</option>
+          <option value="author">Авторский (500 ₽/гость)</option>
+          <option value="nonalc">Безалкогольный (100 ₽/гость)</option>
+        </select>
+
+        <label>Бармены (1–3)</label>
+        <input type="number" id="bartenders" min="1" max="3" value="1" />
+
+        <label>Дополнительно</label>
+        <div class="addons">
+          <label><input type="checkbox" value="3000" id="decor"> Оформление бара (+3000 ₽)</label>
+          <label><input type="checkbox" value="2000" id="custom-drink"> Фирменный коктейль (+2000 ₽)</label>
+          <label><input type="checkbox" value="1000" id="ice"> Лёд и посуда (+1000 ₽)</label>
+        </div>
+
+        <div class="result">
+          <strong>Итого: <span id="total">12 500</span> ₽</strong>
+        </div>
+
+        <button class="btn" onclick="sendCalc()">Получить детальный расчёт</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 6: Форма -->
+  <section class="form-section" id="form">
+    <div class="container">
+      <h2>Оставьте заявку</h2>
+      <form id="contact-form">
+        <input type="text" placeholder="Ваше имя" required/>
+        <input type="tel" placeholder="Телефон" required/>
+        <input type="email" placeholder="Email (опционально)"/>
+        <textarea placeholder="Детали события (дата, место, особенности)"></textarea>
+        <button type="submit" class="btn">Отправить заявку</button>
+      </form>
+      <div id="success-message" style="display:none; color:green; margin-top:15px;">
+        Спасибо! Мы свяжемся с вами в ближайшее время.
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок 7: Контакты -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>📞 <a href="tel:+79001234567">+7 (900) 123-45-67</a></p>
+        <p>📧 <a href="mailto:info@bargo.ru">info@bargo.ru</a></p>
+        <div class="socials">
+          <a href="#">Instagram</a>
+          <a href="#">VK</a>
+          <a href="#">Telegram</a>
+        </div>
+        <button class="btn small" onclick="window.location='tel:+79001234567'">Позвонить</button>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
